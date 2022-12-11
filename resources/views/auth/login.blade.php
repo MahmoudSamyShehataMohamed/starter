@@ -13,11 +13,11 @@
 
                         <div class="form-group row">
 
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('email') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('email or mobile') }}</label>
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <input id="identify" type="text" class="form-control @error('identify') is-invalid @enderror" name="identify" value="{{ old('identify') }}" required autocomplete="identify" >
 
-                                @error('email')
+                                @error('identify')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

@@ -13,8 +13,13 @@ return [
     |
     */
 
-    'welcome' =>'مرحبا واهلا وسهلا بكم',
-    'failed' => 'These credentials do not match our records.',
-    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
-
+    'welcome'        =>'مرحبا واهلا وسهلا بكم',
+    'failed'         => 'These credentials do not match our records.',
+    'throttle'       => 'Too many login attempts. Please try again in :seconds seconds.',
+    'offername'      =>'اسم العرض مطلوب',
+    'Add your offer' => 'اضافة عرض',
+    'Offer Name'     =>'اسم العررض',
+    'Offer price'    =>'سعر العرض',
+    'Offer details'  =>'تفاصيل العرض',
+    'add'            =>'اضافه'
 ];
