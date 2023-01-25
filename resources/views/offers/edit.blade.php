@@ -15,7 +15,6 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
     </head>
     <body>
-        <div>
             @if(Session::has('success'))
             <div class='alert alert-success'>
                 {{Session::get('success')}}
@@ -36,34 +35,50 @@
 
                     </ul>
                 </div>
-              </nav>
+            </nav>
 
 
-            <form class='login' action='{{route('offers.store2')}}' method='GET'>
+        <div class="container">
+
+            <form class='login' action='{{route('offers.update',$offers->id)}}' method='POST'>
 
                 @csrf
                 <h1 class='text-center'>
-                <span class='text-center'>{{__('messages.Add your offer')}}</span>
+                <span class='text-center'>تعديل العرض</span>
                 </h1>
-                <label>{{__('messages.Offer Name')}}</label>
-                <input  class='form-control'  type='text' name='name' >
-                @error('name')
+                <label> العرض</label>
+                <input  class='form-control' value='{{$offers->name_ar}}' type='text' name='name_ar' >
+                @error('name_ar')
                 <div class='alert alert-danger'>{{$message}}</div>
                 @enderror
-                <label>{{__('messages.Offer price')}}</label>
-                <input  class='form-control'  type='text' name='price' >
+                <label> العرض بالانجليزى</label>
+                <input  class='form-control' value='{{$offers->name_en}}' type='text' name='name_en' >
+                @error('name_en')
+                <div class='alert alert-danger'>{{$message}}</div>
+                @enderror
+
+
+                <label>السعر</label>
+                <input  class='form-control'  value='{{$offers->price}}' type='text' name='price' >
                 @error('price')
                 <div class='alert alert-danger'>{{$message}}</div>
                 @enderror
-                <label>{{__('messages.Offer details')}}</label>
-                <input  class='form-control'  type='text' name='details' >
-                @error('details')
+
+
+                <label>التفاصيل بالعربى</label>
+                <input  class='form-control'  value='{{$offers->details_ar}}' type='text' name='details_ar' >
+                @error('details_ar')
                 <div class='alert alert-danger'>{{$message}}</div>
                 @enderror
-                <input  class='btn btn-primary btn-block' type='submit' value='{{__('messages.add')}}'>
+                <label>التفاصيل بالانجليزى</label>
+                <input  class='form-control' value='{{$offers->details_en}}' type='text' name='details_en' >
+                @error('details_en')
+                <div class='alert alert-danger'>{{$message}}</div>
+                @enderror
+                <input  class='btn btn-primary btn-block' type='submit' value='Update'>
             </form>
-
         </div>
+
 
 
     </body>
